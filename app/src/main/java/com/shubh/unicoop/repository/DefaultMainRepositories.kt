@@ -16,7 +16,7 @@ class DefaultMainRepositories : MainRepos {
     override suspend fun getAllAticleSeven(section: String): Resource<List<ResultArticle>> = withContext(Dispatchers.IO) {
         safeCall {
             val response = ApiClient().service.getALlArticleSeven(section,"7", Constant.API_KEY)
-            val response2 = ApiClient().service.getALlArticleOther(section,"7", Constant.API_KEY)
+            val response2 = ApiClient().service.getALlArticleOther(section,"1", Constant.API_KEY)
 
             var newCombineList=response.body()!!.results+response2.body()!!.results
 
